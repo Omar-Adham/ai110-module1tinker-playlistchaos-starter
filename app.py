@@ -253,6 +253,9 @@ def add_song_sidebar():
             all_songs = st.session_state.songs[:]
             all_songs.append(normalized)
             st.session_state.songs = all_songs
+            st.sidebar.success(f"Added '{title}' by {artist}!")
+        elif not title or not artist:
+            st.sidebar.warning("Please enter both title and artist.")
 
 
 def playlist_tabs(playlists):
